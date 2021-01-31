@@ -16,6 +16,7 @@
 		7B4E0B8725C6D4B8007CCB07 /* BingoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E0B8625C6D4B8007CCB07 /* BingoScreenViewController.swift */; };
 		7B4E0B9725C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E0B9525C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift */; };
 		7B4E0B9825C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B4E0B9625C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib */; };
+		7B4E0BA725C6DC43007CCB07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E0BA625C6DC43007CCB07 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7B4E0B8625C6D4B8007CCB07 /* BingoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingoScreenViewController.swift; sourceTree = "<group>"; };
 		7B4E0B9525C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingoScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B4E0B9625C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BingoScreenCollectionViewCell.xib; sourceTree = "<group>"; };
+		7B4E0BA625C6DC43007CCB07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				7B4E0B6925C6D0B0007CCB07 /* AppDelegate.swift */,
 				7B4E0B6B25C6D0B0007CCB07 /* SceneDelegate.swift */,
 				7B4E0B6D25C6D0B0007CCB07 /* ViewController.swift */,
+				7B4E0BA625C6DC43007CCB07 /* Constants.swift */,
 				7B4E0B9225C6D9A1007CCB07 /* BingoScreenViewController */,
 				7B4E0B6F25C6D0B0007CCB07 /* Main.storyboard */,
 				7B4E0B7225C6D0B0007CCB07 /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 				7B4E0B6A25C6D0B0007CCB07 /* AppDelegate.swift in Sources */,
 				7B4E0B9725C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift in Sources */,
 				7B4E0B6C25C6D0B0007CCB07 /* SceneDelegate.swift in Sources */,
+				7B4E0BA725C6DC43007CCB07 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

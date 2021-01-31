@@ -10,12 +10,16 @@ import UIKit
 class BingoScreenViewController: UIViewController {
     
     // MARK: - Constants
+    
+    static let bingoItemCellIdentifier = "BingoItemCell"
 
     // MARK: - IB Outlets
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
+    
+    var bingoScreenCollectionViewCell: BingoScreenCollectionViewCell?
 
     // MARK: - Load
     
@@ -28,14 +32,26 @@ class BingoScreenViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - UICollectionViewDataSource
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BingoScreenViewController.bingoItemCellIdentifier, for: indexPath) as! BingoScreenCollectionViewCell
 
+        cell.delegate = self
+        
+        return cell
+    }
+
+}
+
+extension BingoScreenViewController: BingoScreenCollectionViewCellDelegate {
+    
 }
