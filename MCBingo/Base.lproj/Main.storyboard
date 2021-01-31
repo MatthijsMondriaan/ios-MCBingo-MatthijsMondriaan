@@ -44,6 +44,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dM2-2e-x1p" id="6DP-xf-AmN"/>
+                                    <outlet property="delegate" destination="dM2-2e-x1p" id="kim-t5-RVW"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcJ-Ly-eii"/>

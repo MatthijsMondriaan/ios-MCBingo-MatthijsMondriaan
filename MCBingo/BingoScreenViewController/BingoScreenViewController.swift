@@ -7,11 +7,13 @@
 
 import UIKit
 
-class BingoScreenViewController: UIViewController {
+class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: - Constants
     
-    static let bingoItemCellIdentifier = "BingoItemCell"
+    static let bingoItemCellIdentifier = "BingoItemCellIdentifier"
+    
+    let horizontalCellSpacing: CGFloat = 0
 
     // MARK: - IB Outlets
 
@@ -20,6 +22,9 @@ class BingoScreenViewController: UIViewController {
     // MARK: - Properties
     
     var bingoScreenCollectionViewCell: BingoScreenCollectionViewCell?
+    
+    var viewInitialLoaded: Bool = false
+    var itemsPerRow: CGFloat = 5
 
     // MARK: - Load
     
@@ -29,8 +34,37 @@ class BingoScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.blue;
         collectionView.backgroundColor = .yellow
+        
+        let bingoScreenCollectionViewCell = UINib(nibName: "BingoScreenCollectionViewCell", bundle:nil)
+        collectionView.register(bingoScreenCollectionViewCell, forCellWithReuseIdentifier:BingoScreenViewController.bingoItemCellIdentifier)
+            
+        
+        collectionView.reloadData()
+
     }
     
+    @objc func updateUI() {
+        view.layoutIfNeeded()
+
+        //setNeedsStatusBarAppearanceUpdate()
+        //navigationController?.navigationBar.tintColor = UserSettings.foregroundColor
+
+
+        if !viewInitialLoaded {
+            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+            let viewWidth = collectionView.frame.size.width
+            
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            layout.itemSize = CGSize(width: (viewWidth / itemsPerRow) - (horizontalCellSpacing), height: (viewWidth / itemsPerRow) - horizontalCellSpacing)
+            layout.minimumInteritemSpacing = 0
+            layout.minimumLineSpacing = horizontalCellSpacing * 2
+            collectionView!.collectionViewLayout = layout
+        }
+        
+        collectionView.reloadData()
+        
+        view.layoutIfNeeded()
+    }
 
     // MARK: - UICollectionViewDataSource
     
@@ -39,7 +73,7 @@ class BingoScreenViewController: UIViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 50
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
