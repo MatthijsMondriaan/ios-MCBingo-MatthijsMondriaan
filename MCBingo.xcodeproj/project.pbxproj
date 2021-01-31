@@ -13,6 +13,7 @@
 		7B4E0B7125C6D0B0007CCB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4E0B6F25C6D0B0007CCB07 /* Main.storyboard */; };
 		7B4E0B7325C6D0B0007CCB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B4E0B7225C6D0B0007CCB07 /* Assets.xcassets */; };
 		7B4E0B7625C6D0B0007CCB07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4E0B7425C6D0B0007CCB07 /* LaunchScreen.storyboard */; };
+		7B4E0B8725C6D4B8007CCB07 /* BingoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E0B8625C6D4B8007CCB07 /* BingoScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7B4E0B7225C6D0B0007CCB07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B4E0B7525C6D0B0007CCB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B4E0B7725C6D0B0007CCB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B4E0B8625C6D4B8007CCB07 /* BingoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingoScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7B4E0B6925C6D0B0007CCB07 /* AppDelegate.swift */,
 				7B4E0B6B25C6D0B0007CCB07 /* SceneDelegate.swift */,
 				7B4E0B6D25C6D0B0007CCB07 /* ViewController.swift */,
+				7B4E0B8625C6D4B8007CCB07 /* BingoScreenViewController.swift */,
 				7B4E0B6F25C6D0B0007CCB07 /* Main.storyboard */,
 				7B4E0B7225C6D0B0007CCB07 /* Assets.xcassets */,
 				7B4E0B7425C6D0B0007CCB07 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4E0B8725C6D4B8007CCB07 /* BingoScreenViewController.swift in Sources */,
 				7B4E0B6E25C6D0B0007CCB07 /* ViewController.swift in Sources */,
 				7B4E0B6A25C6D0B0007CCB07 /* AppDelegate.swift in Sources */,
 				7B4E0B6C25C6D0B0007CCB07 /* SceneDelegate.swift in Sources */,
