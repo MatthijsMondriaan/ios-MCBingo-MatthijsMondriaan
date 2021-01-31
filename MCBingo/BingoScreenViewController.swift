@@ -8,12 +8,23 @@
 import UIKit
 
 class BingoScreenViewController: UIViewController {
+    
+    // MARK: - Constants
 
+    // MARK: - IB Outlets
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: - Properties
+
+    // MARK: - Load
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.blue;
+        collectionView.backgroundColor = .yellow
     }
     
 
