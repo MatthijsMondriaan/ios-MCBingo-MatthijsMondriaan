@@ -45,19 +45,15 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         let bingoScreenCollectionViewCell = UINib(nibName: "BingoScreenCollectionViewCell", bundle:nil)
         collectionView.register(bingoScreenCollectionViewCell, forCellWithReuseIdentifier:BingoScreenViewController.bingoItemCellIdentifier)
             
-        
         collectionView.reloadData()
-
     }
     
     @objc func updateUI() {
         view.layoutIfNeeded()
 
-        //setNeedsStatusBarAppearanceUpdate()
-        //navigationController?.navigationBar.tintColor = UserSettings.foregroundColor
-
-
         if !viewInitialLoaded {
+            numberCount = 1
+            
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
             let viewWidth = collectionView.frame.size.width
             
@@ -71,6 +67,13 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.reloadData()
         
         view.layoutIfNeeded()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //collectionView.contentInset = UIEdgeInsets(top: horizontalCellSpacing * 2, left: 0, bottom: 0, right: 0)
+        updateUI()
     }
 
     // MARK: - UICollectionViewDataSource
