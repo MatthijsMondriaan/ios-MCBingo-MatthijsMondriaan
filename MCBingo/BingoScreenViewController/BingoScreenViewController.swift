@@ -25,6 +25,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var viewInitialLoaded: Bool = false
     var itemsPerRow: CGFloat = 5
+    var numberCount = 1
 
     // MARK: - Load
     
@@ -80,6 +81,9 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BingoScreenViewController.bingoItemCellIdentifier, for: indexPath) as! BingoScreenCollectionViewCell
 
         cell.delegate = self
+        cell.number = numberCount
+        
+        numberCount += 1
         
         return cell
     }

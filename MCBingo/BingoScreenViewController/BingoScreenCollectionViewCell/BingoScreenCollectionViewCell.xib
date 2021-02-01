@@ -18,11 +18,11 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Bingo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzw-8h-tbJ">
-                        <rect key="frame" x="78.5" y="86.5" width="92" height="21"/>
+                        <rect key="frame" x="50.5" y="79.5" width="148.5" height="35"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="32"/>
+                        <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </label>
                 </subviews>
             </view>
@@ -32,6 +32,9 @@
                 <constraint firstItem="nzw-8h-tbJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="iyN-Le-DSy"/>
             </constraints>
             <size key="customSize" width="249" height="194"/>
+            <connections>
+                <outlet property="numberLabel" destination="nzw-8h-tbJ" id="gE7-gh-iNb"/>
+            </connections>
             <point key="canvasLocation" x="189.13043478260872" y="200.89285714285714"/>
         </collectionViewCell>
     </objects>

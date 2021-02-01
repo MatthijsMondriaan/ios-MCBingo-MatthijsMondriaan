@@ -17,9 +17,17 @@ protocol BingoScreenCollectionViewCellDelegate: class {
 
 class BingoScreenCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet public weak var numberLabel: UILabel!
+    
     // MARK: - Properties
 
     public weak var delegate: BingoScreenCollectionViewCellDelegate?
+    public var number: Int = 0 {
+        didSet {
+            numberLabel.text = String(number)
+        }
+        
+    }
 
     // MARK: - UI
     
