@@ -49,12 +49,20 @@
                                     <outlet property="delegate" destination="dM2-2e-x1p" id="kim-t5-RVW"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MC Bingo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBQ-f3-8BT">
+                                <rect key="frame" x="77" y="687" width="260.5" height="70"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="64"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" systemColor="systemOrangeColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcJ-Ly-eii"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="oBQ-f3-8BT" firstAttribute="centerX" secondItem="fPB-UY-cpw" secondAttribute="centerX" id="GVg-NX-9Lu"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="centerX" secondItem="VYP-gx-RSS" secondAttribute="centerX" id="JYm-W7-wF4"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="leading" secondItem="GcJ-Ly-eii" secondAttribute="leading" constant="10" id="Y2J-uK-idO"/>
+                            <constraint firstItem="oBQ-f3-8BT" firstAttribute="top" secondItem="fPB-UY-cpw" secondAttribute="bottom" constant="42" id="bBu-Xc-naM"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="centerY" secondItem="VYP-gx-RSS" secondAttribute="centerY" id="caW-3i-Hco"/>
                         </constraints>
                     </view>
@@ -70,6 +78,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
