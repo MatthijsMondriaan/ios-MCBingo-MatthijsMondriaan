@@ -29,6 +29,12 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
 
     // MARK: - Load
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        updateUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,7 +80,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return 25
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
