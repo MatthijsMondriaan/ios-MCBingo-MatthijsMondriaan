@@ -33,7 +33,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fPB-UY-cpw">
                                 <rect key="frame" x="10" y="251" width="394" height="394"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fPB-UY-cpw" secondAttribute="height" multiplier="1:1" id="EmT-PE-R7M"/>
                                 </constraints>
@@ -55,15 +55,25 @@
                                 <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" systemColor="systemOrangeColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYl-fZ-ZCi">
+                                <rect key="frame" x="163.5" y="158" width="87" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Fetch!"/>
+                                <connections>
+                                    <action selector="didTapFetchButton:" destination="dM2-2e-x1p" eventType="touchUpInside" id="pR9-0A-cZL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcJ-Ly-eii"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YYl-fZ-ZCi" firstAttribute="centerX" secondItem="GcJ-Ly-eii" secondAttribute="centerX" id="0LG-h1-OUd"/>
                             <constraint firstItem="oBQ-f3-8BT" firstAttribute="centerX" secondItem="fPB-UY-cpw" secondAttribute="centerX" id="GVg-NX-9Lu"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="centerX" secondItem="VYP-gx-RSS" secondAttribute="centerX" id="JYm-W7-wF4"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="leading" secondItem="GcJ-Ly-eii" secondAttribute="leading" constant="10" id="Y2J-uK-idO"/>
                             <constraint firstItem="oBQ-f3-8BT" firstAttribute="top" secondItem="fPB-UY-cpw" secondAttribute="bottom" constant="42" id="bBu-Xc-naM"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="centerY" secondItem="VYP-gx-RSS" secondAttribute="centerY" id="caW-3i-Hco"/>
+                            <constraint firstItem="fPB-UY-cpw" firstAttribute="top" secondItem="YYl-fZ-ZCi" secondAttribute="bottom" constant="42" id="equ-kS-OiP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -76,6 +86,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

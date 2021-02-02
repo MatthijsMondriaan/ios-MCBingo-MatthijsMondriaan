@@ -75,7 +75,14 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         //collectionView.contentInset = UIEdgeInsets(top: horizontalCellSpacing * 2, left: 0, bottom: 0, right: 0)
         updateUI()
     }
+    
+    // MARK: - IB Actions
 
+    @IBAction func didTapFetchButton(_ sender: UIButton) {
+        print("Fetch data!")
+        
+        Gateway.shared.getData()
+    }
     // MARK: - UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
