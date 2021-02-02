@@ -73,6 +73,7 @@
 				7B4E0B6D25C6D0B0007CCB07 /* ViewController.swift */,
 				7B4E0BA625C6DC43007CCB07 /* Constants.swift */,
 				7BFDC65725C9D73300E5B536 /* Model */,
+				7BFDC65B25C9D80100E5B536 /* Data */,
 				7BFDC65225C9C81200E5B536 /* API */,
 				7B4E0B9225C6D9A1007CCB07 /* BingoScreenViewController */,
 				7B4E0B6F25C6D0B0007CCB07 /* Main.storyboard */,
@@ -115,6 +116,13 @@
 				7BFDC65825C9D75500E5B536 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7BFDC65B25C9D80100E5B536 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
