@@ -8,5 +8,7 @@
 import UIKit
 
 class Gateway: NSObject {
+    
+    // Do API stuff
 
 }
