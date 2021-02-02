@@ -17,6 +17,7 @@
 		7B4E0B9725C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E0B9525C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift */; };
 		7B4E0B9825C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B4E0B9625C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib */; };
 		7B4E0BA725C6DC43007CCB07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4E0BA625C6DC43007CCB07 /* Constants.swift */; };
+		7BFDC65425C9C85800E5B536 /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFDC65325C9C85800E5B536 /* Gateway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7B4E0B9525C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingoScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B4E0B9625C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BingoScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		7B4E0BA625C6DC43007CCB07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7BFDC65325C9C85800E5B536 /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				7B4E0B6B25C6D0B0007CCB07 /* SceneDelegate.swift */,
 				7B4E0B6D25C6D0B0007CCB07 /* ViewController.swift */,
 				7B4E0BA625C6DC43007CCB07 /* Constants.swift */,
+				7BFDC65225C9C81200E5B536 /* API */,
 				7B4E0B9225C6D9A1007CCB07 /* BingoScreenViewController */,
 				7B4E0B6F25C6D0B0007CCB07 /* Main.storyboard */,
 				7B4E0B7225C6D0B0007CCB07 /* Assets.xcassets */,
@@ -93,6 +96,14 @@
 				7B4E0B9625C6DA1E007CCB07 /* BingoScreenCollectionViewCell.xib */,
 			);
 			path = BingoScreenCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		7BFDC65225C9C81200E5B536 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7BFDC65325C9C85800E5B536 /* Gateway.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			files = (
 				7B4E0B8725C6D4B8007CCB07 /* BingoScreenViewController.swift in Sources */,
 				7B4E0B6E25C6D0B0007CCB07 /* ViewController.swift in Sources */,
+				7BFDC65425C9C85800E5B536 /* Gateway.swift in Sources */,
 				7B4E0B6A25C6D0B0007CCB07 /* AppDelegate.swift in Sources */,
 				7B4E0B9725C6DA1E007CCB07 /* BingoScreenCollectionViewCell.swift in Sources */,
 				7B4E0B6C25C6D0B0007CCB07 /* SceneDelegate.swift in Sources */,
