@@ -32,7 +32,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
                   endingLineNumber = "49"
-                  offsetFromSymbolStart = "3577">
+                  offsetFromSymbolStart = "1968">
                </Location>
                <Location
                   uuid = "86A84DC2-526F-4B18-9D33-F21B69C5404D - 6017ee7538940d0f"
@@ -47,7 +47,22 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
                   endingLineNumber = "49"
-                  offsetFromSymbolStart = "3905">
+                  offsetFromSymbolStart = "2568">
+               </Location>
+               <Location
+                  uuid = "86A84DC2-526F-4B18-9D33-F21B69C5404D - 6017ee7538940d0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MCBingo.Gateway.getData() -&gt; ()"
+                  moduleName = "MCBingo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthijs/Code/Xcode/Mondriaan/MCBingo/MCBingo/API/Gateway.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2756">
                </Location>
             </Locations>
          </BreakpointContent>
