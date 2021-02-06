@@ -26,12 +26,24 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var viewInitialLoaded: Bool = false
     var itemsPerRow: CGFloat = 5
-    
+    var bingoNumbers = [Int]()
+
     var welcomeObject: Welcome? {
         didSet {
+            if welcomeObject != nil {
+                bingoNumbers.removeAll()
+
+                for (_, item) in welcomeObject!.numbers.enumerated() {
+                    bingoNumbers.append(item.number)
+                }
+                
+            } else {
+                welcomeObject = nil
+            }
             collectionView.reloadData()
         }
     }
+    
 
     // MARK: - Load
     
@@ -101,41 +113,16 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
                 
                 return
             }
-            
-            /*
-
-            if error != nil, case TaskGateWayError.NoDevice = error! {
-                return
-            }
-            
-            if let error = error as NSError?, error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet {
-                print("not connected")
-                
-                return
-            }
-            
-            if let error = error as NSError?, error.domain == NSURLErrorDomain {
-                print("error code is \(error.code)")
-                
-                return
-            }
-            */
-
-            //throw away anyway
-            
         })
     }
     // MARK: - UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let welcome = welcomeObject {
-            return welcome.numbers.count
-        }
-        return 0
+        return bingoNumbers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -143,9 +130,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
 
         cell.delegate = self
         
-        if let welcome = welcomeObject {
-            cell.number = welcome.numbers[indexPath.row].number
-        }
+        cell.number = bingoNumbers[indexPath.row]
                 
         return cell
     }
