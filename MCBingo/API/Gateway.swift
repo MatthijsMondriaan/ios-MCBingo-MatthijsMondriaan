@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum GateWayError: Error {
+    case SomeError
+}
+
 class Gateway: NSObject {
     
     // MARK: - Constants
@@ -15,7 +19,7 @@ class Gateway: NSObject {
     
     // Do API stuff
     
-    func getData(handler: @escaping (Bool, String?) -> Void) {
+    func getData(handler: @escaping (Bool, Error?) -> Void) {
         // Create URL
         let url = URL(string: "https://rocbingo.mncr.nl/api/getPlayer/matthijs/12345")
         guard let requestUrl = url else { fatalError() }
@@ -44,15 +48,18 @@ class Gateway: NSObject {
                 do {
                     let decoder = JSONDecoder()
                     let welcome = try decoder.decode(Welcome.self, from: data)
+                    
                     print ("Found a card with id: \(welcome.card.id)")
+                    AppData.shared.welcome = welcome
                     
                     handler(true, nil)
                 } catch {
                     print ("JSON error: \(error)")
-                    handler(false, nil)
+                    
+                    handler(false, GateWayError.SomeError)
                 }
             }
-            handler(false, nil)
+            handler(false, GateWayError.SomeError)
         }
         task.resume()
     }

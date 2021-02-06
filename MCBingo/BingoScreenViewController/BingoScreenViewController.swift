@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: - Constants
@@ -25,7 +26,12 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var viewInitialLoaded: Bool = false
     var itemsPerRow: CGFloat = 5
-    var numberCount = 1
+    
+    var welcomeObject: Welcome? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     // MARK: - Load
     
@@ -44,15 +50,18 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         
         let bingoScreenCollectionViewCell = UINib(nibName: "BingoScreenCollectionViewCell", bundle:nil)
         collectionView.register(bingoScreenCollectionViewCell, forCellWithReuseIdentifier:BingoScreenViewController.bingoItemCellIdentifier)
-            
-        collectionView.reloadData()
+        
+        AppData.shared.onChange.bind(self) {
+            if let welcome = AppData.shared.welcome {
+                self.welcomeObject = welcome
+            }
+        }
     }
     
     @objc func updateUI() {
         view.layoutIfNeeded()
 
         if !viewInitialLoaded {
-            numberCount = 1
             
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
             let viewWidth = collectionView.frame.size.width
@@ -87,12 +96,14 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
                 return
             }
             
-            /*
-            if error != nil, case TaskGateWayError.TaskIsOld = error! {
-                self.deleteRequestItem(requestItem: taskStatusItem)
+            if error != nil, case GateWayError.SomeError = error!  {
+                //Show error
                 
                 return
             }
+            
+            /*
+
             if error != nil, case TaskGateWayError.NoDevice = error! {
                 return
             }
@@ -121,17 +132,21 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 25
+        if let welcome = welcomeObject {
+            return welcome.numbers.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BingoScreenViewController.bingoItemCellIdentifier, for: indexPath) as! BingoScreenCollectionViewCell
 
         cell.delegate = self
-        cell.number = numberCount
         
-        numberCount += 1
-        
+        if let welcome = welcomeObject {
+            cell.number = welcome.numbers[indexPath.row].number
+        }
+                
         return cell
     }
 
