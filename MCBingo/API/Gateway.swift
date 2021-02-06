@@ -15,7 +15,7 @@ class Gateway: NSObject {
     
     // Do API stuff
     
-    func getData() {
+    func getData(handler: @escaping (Bool, String?) -> Void) {
         // Create URL
         let url = URL(string: "https://rocbingo.mncr.nl/api/getPlayer/matthijs/12345")
         guard let requestUrl = url else { fatalError() }
@@ -46,12 +46,13 @@ class Gateway: NSObject {
                     let welcome = try decoder.decode(Welcome.self, from: data)
                     print ("Found a card with id: \(welcome.card.id)")
                     
+                    handler(true, nil)
                 } catch {
                     print ("JSON error: \(error)")
+                    handler(false, nil)
                 }
             }
-            
-            
+            handler(false, nil)
         }
         task.resume()
     }

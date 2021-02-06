@@ -81,7 +81,38 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBAction func didTapFetchButton(_ sender: UIButton) {
         print("Fetch data!")
         
-        Gateway.shared.getData()
+        Gateway.shared.getData(handler: { success, error in
+            if success {
+                
+                return
+            }
+            
+            /*
+            if error != nil, case TaskGateWayError.TaskIsOld = error! {
+                self.deleteRequestItem(requestItem: taskStatusItem)
+                
+                return
+            }
+            if error != nil, case TaskGateWayError.NoDevice = error! {
+                return
+            }
+            
+            if let error = error as NSError?, error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet {
+                print("not connected")
+                
+                return
+            }
+            
+            if let error = error as NSError?, error.domain == NSURLErrorDomain {
+                print("error code is \(error.code)")
+                
+                return
+            }
+            */
+
+            //throw away anyway
+            
+        })
     }
     // MARK: - UICollectionViewDataSource
     
