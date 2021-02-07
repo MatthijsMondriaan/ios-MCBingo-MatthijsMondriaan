@@ -25,16 +25,38 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     var bingoScreenCollectionViewCell: BingoScreenCollectionViewCell?
     
     var viewInitialLoaded: Bool = false
-    var itemsPerRow: CGFloat = 5
-    var bingoNumbers = [Int]()
+    var amountOfRows: CGFloat = 5
+    var amountOfColumns: CGFloat = 5
+    var bingoNumbers = [[Int]]()
 
     var welcomeObject: Welcome? {
         didSet {
             if welcomeObject != nil {
                 bingoNumbers.removeAll()
+                
+                let columns = Int(amountOfColumns)
+                var rowCounter = 1
+                var numbers = [Int]()
 
-                for (_, item) in welcomeObject!.numbers.enumerated() {
-                    bingoNumbers.append(item.number)
+                for i in 1...Int(amountOfRows * amountOfColumns)  {
+
+                    numbers.removeAll()
+                    
+                    for (_, item) in welcomeObject!.numbers.enumerated()    {
+                        if item.row == rowCounter  {
+                            for j in 1...Int(amountOfColumns)   {
+//                                if (item.col == i)  {
+//                                    print("i is \(i), row number: \(item.row) column number \(item.col) and number \(item.number)")
+//                                    numbers.append(item.number)
+//                                }
+                                print("row number: \(item.row), column number \(item.col)")
+                            }
+                        }
+                    }
+                    
+                    rowCounter += 1
+
+                    bingoNumbers.append(numbers)
                 }
                 
             } else {
@@ -79,7 +101,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
             let viewWidth = collectionView.frame.size.width
             
             layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            layout.itemSize = CGSize(width: (viewWidth / itemsPerRow) - (horizontalCellSpacing), height: (viewWidth / itemsPerRow) - horizontalCellSpacing)
+            layout.itemSize = CGSize(width: (viewWidth / amountOfColumns) - (horizontalCellSpacing), height: (viewWidth / amountOfColumns) - horizontalCellSpacing)
             layout.minimumInteritemSpacing = 0
             layout.minimumLineSpacing = horizontalCellSpacing * 2
             collectionView!.collectionViewLayout = layout
@@ -130,7 +152,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
 
         cell.delegate = self
         
-        cell.number = bingoNumbers[indexPath.row]
+        //cell.number = bingoNumbers[indexPath.row]
                 
         return cell
     }
