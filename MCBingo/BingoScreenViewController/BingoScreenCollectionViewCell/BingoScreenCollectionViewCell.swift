@@ -51,7 +51,12 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         // Initialization code
+        layer.cornerRadius = Constants.mediumCornerRadius
+        layer.borderWidth = 2
+        layer.borderColor = Colors.black.cg
         
+        numberLabel.backgroundColor = .clear
+        numberLabel.textColor = Colors.black.ui
     }
     
     override func prepareForReuse() {
@@ -76,7 +81,8 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
         layoutIfNeeded()
         
         isUserInteractionEnabled = true
-        backgroundColor = .red
+        backgroundColor = .clear
+        
         numberLabel.isUserInteractionEnabled = false
         bingoButton.backgroundColor = .clear
         bingoButton.alpha = 0.5

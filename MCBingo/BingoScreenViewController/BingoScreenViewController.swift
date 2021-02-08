@@ -48,8 +48,8 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor.blue;
-        collectionView.backgroundColor = .yellow
+        view.backgroundColor = Colors.whiteColor;
+        collectionView.backgroundColor = Colors.ultraLightGreenColor
         
         let bingoScreenCollectionViewCell = UINib(nibName: "BingoScreenCollectionViewCell", bundle:nil)
         collectionView.register(bingoScreenCollectionViewCell, forCellWithReuseIdentifier:BingoScreenViewController.bingoItemCellIdentifier)
