@@ -45,12 +45,10 @@ class Gateway: NSObject {
             if let data = data  {
             //if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 //print("Response data string:\n \(dataString)")
-                
                 do {
                     let decoder = JSONDecoder()
                     let welcome = try decoder.decode(Welcome.self, from: data)
-                    
-                    print ("Found a card with id: \(welcome.card.id)")
+                    //print ("Found a card with id: \(welcome.card.id)")
                     AppData.shared.welcome = welcome
                     
                     handler(true, nil)

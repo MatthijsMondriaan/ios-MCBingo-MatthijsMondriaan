@@ -25,12 +25,15 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
         didSet {
             if bingoNumber != nil   {
                 if bingoNumber!.number.number > 0   {
+                    isUserInteractionEnabled = true
                     numberLabel.text = String(bingoNumber!.number.number)
-                    // If this number is marked, then set alpha to 0.5, else set alpha to zero
+                    
+                    // If this cell is marked, then set button color to clear, else set color to black
                     bingoButton.backgroundColor = !bingoNumber!.marked ? .clear : .black
                 } else  {
+                    // If this cell has number 0, this should be the one in the center
                     numberLabel.text = "B"
-                    
+                    isUserInteractionEnabled = false
                 }
             } else  {
                 numberLabel.text = ""
@@ -44,11 +47,11 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         // Initialization code
-        isUserInteractionEnabled = true
-        backgroundColor = .red
-        numberLabel.isUserInteractionEnabled = false
-        bingoButton.backgroundColor = .clear
-        bingoButton.alpha = 0.5
+        
+    }
+    
+    override func prepareForReuse() {
+        updateUI()
     }
     
     override func layoutSubviews() {
@@ -67,6 +70,12 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
 
     private func updateUI() {
         layoutIfNeeded()
+        
+        isUserInteractionEnabled = true
+        backgroundColor = .red
+        numberLabel.isUserInteractionEnabled = false
+        bingoButton.backgroundColor = .clear
+        bingoButton.alpha = 0.5
     }
     
     // MARK: - Functions

@@ -110,6 +110,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
             var rowCounter = 1
             var numbers = [BingoNumber]()
             
+            // Clean up
             bingoNumbers.removeAll()
             
             // Creating a two dimensional array for Bingo with amountOfRows and amountOfColumns:
@@ -149,7 +150,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
                 
         return cell
     }
-
+    
 }
 
 extension BingoScreenViewController: BingoScreenCollectionViewCellDelegate {
