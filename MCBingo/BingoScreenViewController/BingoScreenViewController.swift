@@ -19,6 +19,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     // MARK: - IB Outlets
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var fetchButton: UIButton!
     
     // MARK: - Properties
     
@@ -50,6 +51,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         // Do any additional setup after loading the view.
         view.backgroundColor = Colors.whiteColor;
         collectionView.backgroundColor = Colors.ultraLightGreenColor
+        fetchButton.titleLabel?.textColor = Colors.textColor
         
         let bingoScreenCollectionViewCell = UINib(nibName: "BingoScreenCollectionViewCell", bundle:nil)
         collectionView.register(bingoScreenCollectionViewCell, forCellWithReuseIdentifier:BingoScreenViewController.bingoItemCellIdentifier)

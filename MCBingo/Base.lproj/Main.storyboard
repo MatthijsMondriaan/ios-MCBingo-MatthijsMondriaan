@@ -37,13 +37,50 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MC Bingo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBQ-f3-8BT">
                                 <rect key="frame" x="77" y="687" width="260.5" height="70"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="64"/>
-                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" systemColor="systemOrangeColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2cx-fz-ePs">
+                                <rect key="frame" x="10" y="188.5" width="394" height="52.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF5-2p-oq8">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq4-us-4fU">
+                                        <rect key="frame" x="79" y="0.0" width="78.5" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXl-KB-PiH">
+                                        <rect key="frame" x="157.5" y="0.0" width="79" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-8b-dpx">
+                                        <rect key="frame" x="236.5" y="0.0" width="78.5" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-py-WP2">
+                                        <rect key="frame" x="315" y="0.0" width="79" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYl-fZ-ZCi">
-                                <rect key="frame" x="163.5" y="158" width="87" height="51"/>
+                                <rect key="frame" x="163.5" y="54" width="87" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Fetch!"/>
+                                <state key="normal" title="Fetch!">
+                                    <color key="titleColor" red="0.12178578230000001" green="0.1445406377" blue="0.17255347970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapFetchButton:" destination="dM2-2e-x1p" eventType="touchUpInside" id="pR9-0A-cZL"/>
                                 </connections>
@@ -53,16 +90,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YYl-fZ-ZCi" firstAttribute="centerX" secondItem="GcJ-Ly-eii" secondAttribute="centerX" id="0LG-h1-OUd"/>
+                            <constraint firstItem="YYl-fZ-ZCi" firstAttribute="top" secondItem="GcJ-Ly-eii" secondAttribute="top" constant="10" id="BWf-rY-O3q"/>
                             <constraint firstItem="oBQ-f3-8BT" firstAttribute="centerX" secondItem="fPB-UY-cpw" secondAttribute="centerX" id="GVg-NX-9Lu"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="centerX" secondItem="VYP-gx-RSS" secondAttribute="centerX" id="JYm-W7-wF4"/>
+                            <constraint firstItem="2cx-fz-ePs" firstAttribute="centerX" secondItem="fPB-UY-cpw" secondAttribute="centerX" id="VsW-nY-Teq"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="leading" secondItem="GcJ-Ly-eii" secondAttribute="leading" constant="10" id="Y2J-uK-idO"/>
                             <constraint firstItem="oBQ-f3-8BT" firstAttribute="top" secondItem="fPB-UY-cpw" secondAttribute="bottom" constant="42" id="bBu-Xc-naM"/>
                             <constraint firstItem="fPB-UY-cpw" firstAttribute="centerY" secondItem="VYP-gx-RSS" secondAttribute="centerY" id="caW-3i-Hco"/>
-                            <constraint firstItem="fPB-UY-cpw" firstAttribute="top" secondItem="YYl-fZ-ZCi" secondAttribute="bottom" constant="42" id="equ-kS-OiP"/>
+                            <constraint firstItem="fPB-UY-cpw" firstAttribute="top" secondItem="2cx-fz-ePs" secondAttribute="bottom" constant="10" id="jQ2-fk-Uo2"/>
+                            <constraint firstItem="2cx-fz-ePs" firstAttribute="width" secondItem="fPB-UY-cpw" secondAttribute="width" id="wNV-XR-4Wf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="fPB-UY-cpw" id="BIR-a0-Q9e"/>
+                        <outlet property="fetchButton" destination="YYl-fZ-ZCi" id="AeP-u6-bQh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQa-xi-jgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
