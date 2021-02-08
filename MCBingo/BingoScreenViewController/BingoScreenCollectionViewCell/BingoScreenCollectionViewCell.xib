@@ -24,6 +24,12 @@
                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="32"/>
                         <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cij-lc-goR">
+                        <rect key="frame" x="10" y="10" width="229" height="174"/>
+                        <connections>
+                            <action selector="didTapBingoButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hXe-L5-a3Z"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -31,11 +37,16 @@
             <constraints>
                 <constraint firstItem="nzw-8h-tbJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="8H4-2q-Fne"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="nzw-8h-tbJ" secondAttribute="trailing" constant="10" id="9Ad-7i-cdR"/>
+                <constraint firstItem="Cij-lc-goR" firstAttribute="height" secondItem="nzw-8h-tbJ" secondAttribute="height" id="PH0-AG-wWA"/>
+                <constraint firstItem="Cij-lc-goR" firstAttribute="width" secondItem="nzw-8h-tbJ" secondAttribute="width" id="h1r-1F-HeA"/>
+                <constraint firstItem="Cij-lc-goR" firstAttribute="centerX" secondItem="nzw-8h-tbJ" secondAttribute="centerX" id="ouj-IL-GoW"/>
+                <constraint firstItem="Cij-lc-goR" firstAttribute="centerY" secondItem="nzw-8h-tbJ" secondAttribute="centerY" id="sh5-As-upN"/>
                 <constraint firstItem="nzw-8h-tbJ" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="10" id="vIv-fu-GZc"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="nzw-8h-tbJ" secondAttribute="bottom" constant="10" id="wOZ-5F-M9p"/>
             </constraints>
             <size key="customSize" width="249" height="194"/>
             <connections>
+                <outlet property="bingoButton" destination="Cij-lc-goR" id="NgJ-lp-3zi"/>
                 <outlet property="numberLabel" destination="nzw-8h-tbJ" id="gE7-gh-iNb"/>
             </connections>
             <point key="canvasLocation" x="189.13043478260872" y="200.89285714285714"/>

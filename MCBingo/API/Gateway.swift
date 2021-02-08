@@ -42,7 +42,8 @@ class Gateway: NSObject {
             }
             
             // Convert HTTP Response Data to a simple String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+            if let data = data  {
+            //if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 //print("Response data string:\n \(dataString)")
                 
                 do {
@@ -63,5 +64,5 @@ class Gateway: NSObject {
         }
         task.resume()
     }
-
+    
 }

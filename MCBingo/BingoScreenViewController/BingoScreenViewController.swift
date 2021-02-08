@@ -153,5 +153,8 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
 }
 
 extension BingoScreenViewController: BingoScreenCollectionViewCellDelegate {
-    
+    func markBingoNumber(bingoNumber: BingoNumber) {
+        bingoNumbers[bingoNumber.number.row - 1][bingoNumber.number.col - 1] = bingoNumber
+        collectionView.reloadData()
+    }
 }
