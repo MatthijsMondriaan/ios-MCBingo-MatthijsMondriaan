@@ -17,6 +17,10 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet public weak var numberLabel: UILabel!
     @IBOutlet weak var bingoButton: UIButton!
     
+    // MARK: - Constants
+    
+    let buttonImage = UIImage()
+    
     // MARK: - Properties
 
     public weak var delegate: BingoScreenCollectionViewCellDelegate?
