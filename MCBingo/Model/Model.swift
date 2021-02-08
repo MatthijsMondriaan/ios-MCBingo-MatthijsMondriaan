@@ -64,3 +64,8 @@ struct Player: Codable {
         case uniqueID = "unique_id"
     }
 }
+
+struct BingoNumber  {
+    let number: Number
+    var marked: Bool = false
+}

@@ -22,9 +22,14 @@ class BingoScreenCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
 
     public weak var delegate: BingoScreenCollectionViewCellDelegate?
-    public var number: Int = 0 {
+    
+    public var bingoNumber: BingoNumber? {
         didSet {
-            numberLabel.text = String(number)
+            if bingoNumber != nil   {
+                numberLabel.text = String(bingoNumber!.number.number)
+            } else  {
+                numberLabel.text = ""
+            }
         }
         
     }

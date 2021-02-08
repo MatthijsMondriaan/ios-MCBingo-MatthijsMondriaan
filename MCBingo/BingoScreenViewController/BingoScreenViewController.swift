@@ -27,7 +27,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     var viewInitialLoaded: Bool = false
     var amountOfRows: CGFloat = 5
     var amountOfColumns: CGFloat = 5
-    var bingoNumbers = [[Int]]()
+    var bingoNumbers = [[BingoNumber]]()
 
     var welcomeObject: Welcome? {
         didSet {
@@ -65,7 +65,6 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         view.layoutIfNeeded()
 
         if !viewInitialLoaded {
-            
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
             let viewWidth = collectionView.frame.size.width
             
@@ -109,16 +108,16 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         if welcomeObject != nil {
             
             var rowCounter = 1
-            var numbers = [Int]()
+            var numbers = [BingoNumber]()
             
             bingoNumbers.removeAll()
             
             // Creating a two dimensional array for Bingo with amountOfRows and amountOfColumns:
             for _ in 1...Int(amountOfColumns)    {
-                for (index, item) in welcomeObject!.numbers.enumerated()    {
+                for (_, item) in welcomeObject!.numbers.enumerated()    {
                     if item.row == rowCounter  {
                         //print("index is \(index), row number: \(item.row) column number \(item.col) and number \(item.number)")
-                        numbers.append(item.number)
+                        numbers.append(BingoNumber(number: item, marked: false))
                     }
                 }
                 rowCounter += 1
@@ -146,8 +145,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BingoScreenViewController.bingoItemCellIdentifier, for: indexPath) as! BingoScreenCollectionViewCell
 
         cell.delegate = self
-        
-        cell.number = bingoNumbers[indexPath.section][indexPath.row]
+        cell.bingoNumber = bingoNumbers[indexPath.section][indexPath.row]
                 
         return cell
     }
