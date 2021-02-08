@@ -31,38 +31,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
 
     var welcomeObject: Welcome? {
         didSet {
-            if welcomeObject != nil {
-                bingoNumbers.removeAll()
-                
-                let columns = Int(amountOfColumns)
-                var rowCounter = 1
-                var numbers = [Int]()
-
-                for i in 1...Int(amountOfRows * amountOfColumns)  {
-
-                    numbers.removeAll()
-                    
-                    for (_, item) in welcomeObject!.numbers.enumerated()    {
-                        if item.row == rowCounter  {
-                            for j in 1...Int(amountOfColumns)   {
-//                                if (item.col == i)  {
-//                                    print("i is \(i), row number: \(item.row) column number \(item.col) and number \(item.number)")
-//                                    numbers.append(item.number)
-//                                }
-                                print("row number: \(item.row), column number \(item.col)")
-                            }
-                        }
-                    }
-                    
-                    rowCounter += 1
-
-                    bingoNumbers.append(numbers)
-                }
-                
-            } else {
-                welcomeObject = nil
-            }
-            collectionView.reloadData()
+            setBingoNumbers()
         }
     }
     
@@ -122,25 +91,51 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
     // MARK: - IB Actions
 
     @IBAction func didTapFetchButton(_ sender: UIButton) {
-        print("Fetch data!")
-        
         Gateway.shared.getData(handler: { success, error in
             if success {
-                
                 return
             }
             
             if error != nil, case GateWayError.SomeError = error!  {
                 //Show error
-                
                 return
             }
         })
     }
+    
+    // MARK: - Functions
+    
+    func setBingoNumbers()  {
+        if welcomeObject != nil {
+            
+            var rowCounter = 1
+            var numbers = [Int]()
+            
+            bingoNumbers.removeAll()
+            
+            // Creating a two dimensional array for Bingo with amountOfRows and amountOfColumns:
+            for _ in 1...Int(amountOfColumns)    {
+                for (index, item) in welcomeObject!.numbers.enumerated()    {
+                    if item.row == rowCounter  {
+                        //print("index is \(index), row number: \(item.row) column number \(item.col) and number \(item.number)")
+                        numbers.append(item.number)
+                    }
+                }
+                rowCounter += 1
+
+                bingoNumbers.append(numbers)
+                numbers.removeAll()
+            }
+        } else {
+            welcomeObject = nil
+        }
+        collectionView.reloadData()
+    }
+    
     // MARK: - UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return Int(amountOfRows)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -152,7 +147,7 @@ class BingoScreenViewController: UIViewController, UICollectionViewDelegate, UIC
 
         cell.delegate = self
         
-        //cell.number = bingoNumbers[indexPath.row]
+        cell.number = bingoNumbers[indexPath.section][indexPath.row]
                 
         return cell
     }
