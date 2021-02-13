@@ -17,7 +17,10 @@ class AppData {
     let onChange = Event<Void>(queue: .main)
     
     var welcome: Welcome? {
-        get { return AppData.defaults?.get(forKey: "welcome", decodable: Welcome.self) ?? nil }
+        get {
+            return AppData.defaults?.get(forKey: "welcome", decodable: Welcome.self) ?? nil
+        }
+        
         set {
             if newValue != nil {
                 try? AppData.defaults?.set(forKey: "welcome", encodable: newValue)
